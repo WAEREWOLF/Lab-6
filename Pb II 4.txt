@@ -1,0 +1,63 @@
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int find_largest(int *a, int n)
+{
+    int max,i;
+    max=*a;
+    for(i=0;i<n;i++)
+        if(*a>max)
+           {*a=max;
+            a++;
+           }
+
+}
+
+int main()
+
+
+{
+    int i,n;
+    int s[40];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+        printf("The largest value is: %d",find_largest(&s,n));
+    return 0;
+}*/
+
+
+#include <stdio.h>
+int fc(int *maximum, int size)
+{
+    int c,array[50], location;
+   maximum  = array;
+  *maximum = *array;
+
+  for (c = 1; c < size; c++)
+  {
+    if (*(array+c) > *maximum)
+    {
+       *maximum = *(array+c);
+       location = c+1;
+    }
+  }
+}
+
+
+int main()
+{
+  long array[100], *maximum, size, c, location = 1;
+
+  printf("Enter the number of elements in array\n");
+  scanf("%ld", &size);
+
+  printf("Enter %ld integers\n", size);
+
+  for ( c = 0 ; c < size ; c++ )
+    scanf("%ld", &array[c]);
+
+
+
+  printf("Maximum element  is %d.\n", fc(maximum,size));
+  return 0;
+}

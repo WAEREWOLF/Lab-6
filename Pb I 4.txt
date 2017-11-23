@@ -1,0 +1,29 @@
+#include <string.h>
+
+int strend(char s[], char t[]) {
+  int length1 = strlen(s);
+  int length2 = strlen(t);
+
+  if (length1 < length2)
+        return 0;
+
+  while (length2 > 1) {
+    if (*(t + length2--) != *(s + length1--)) {
+      return 0;
+    }
+  }
+
+  return "1" ;
+}
+
+int main()
+{
+    char s1[50],s2[50];
+    printf("Input the first word: ");
+    gets(s1); //memorez primul cuvant
+     printf("Input the second word: ");
+    gets(s2);// memorez al doilea cuvant
+    //cuvantul al 2 trebuie sa fie in cuvantul 1 pentru a returna 1
+
+    printf("Result is %s", strend(s1,s2));
+}

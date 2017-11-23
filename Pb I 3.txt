@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+ char* strcat(char* dest_ptr, char * src_ptr)
+   {
+
+  	   char* result = dest_ptr;
+  	   if((NULL != dest_ptr) && (NULL != src_ptr))
+  	   {
+
+ 	     while(NULL != *dest_ptr)
+  	     {
+  	       dest_ptr++;
+  	     }
+  	    
+  	     while(NULL != *src_ptr)
+  	     {
+  	       *dest_ptr++ = *src_ptr++;
+  	     }
+  	     
+  	     *dest_ptr = NULL;
+  	   }
+  	   return result;
+
+ }
+
+
+int main()
+{
+   char array1[50];
+   char array2[50];
+   int string_length;
+
+   printf("Input a string 1: ");
+   gets(array1);
+   printf("Input a string 2: ");
+   gets(array2);
+   printf("The reusult of strcat function is %s",strcat(array1,array2));
+
+
+
+
+
+
+}
